@@ -9,8 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        Text("Hello World")
+        TabView {
+            VStack {
+                Spacer()
+                TemperatureConverterView()
+                Spacer()
+            }
+            .tabItem { Image(systemName: "thermometer") }
+        }
     }
 }
 
