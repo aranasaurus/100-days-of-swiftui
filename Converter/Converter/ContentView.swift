@@ -12,12 +12,17 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            VStack {
-                Spacer()
-                TemperatureConverterView()
-                Spacer()
-            }
-            .tabItem { Image(systemName: "thermometer") }
+            TemperatureConverterView()
+                .tabItem({
+                    Image(systemName: "thermometer")
+                    Text("Temp")
+                })
+
+            WeightConverterView()
+                .tabItem({
+                    Image(systemName: "gauge")
+                    Text("Weight")
+                })
         }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F94831CB23527B420004F612 /* TemperatureConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94831CA23527B420004F612 /* TemperatureConverterView.swift */; };
+		F94831CD23527C370004F612 /* WeightConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94831CC23527C370004F612 /* WeightConverterView.swift */; };
 		F9ED4311235261A7006B3650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED4310235261A7006B3650 /* AppDelegate.swift */; };
 		F9ED4313235261A7006B3650 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED4312235261A7006B3650 /* SceneDelegate.swift */; };
 		F9ED4315235261A7006B3650 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ED4314235261A7006B3650 /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		F94831CA23527B420004F612 /* TemperatureConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConverterView.swift; sourceTree = "<group>"; };
+		F94831CC23527C370004F612 /* WeightConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightConverterView.swift; sourceTree = "<group>"; };
 		F9ED430D235261A7006B3650 /* Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Converter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9ED4310235261A7006B3650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9ED4312235261A7006B3650 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				F9ED4312235261A7006B3650 /* SceneDelegate.swift */,
 				F9ED4314235261A7006B3650 /* ContentView.swift */,
 				F94831CA23527B420004F612 /* TemperatureConverterView.swift */,
+				F94831CC23527C370004F612 /* WeightConverterView.swift */,
 				F9ED4316235261AF006B3650 /* Assets.xcassets */,
 				F9ED431B235261AF006B3650 /* LaunchScreen.storyboard */,
 				F9ED431E235261AF006B3650 /* Info.plist */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F94831CD23527C370004F612 /* WeightConverterView.swift in Sources */,
 				F9ED4311235261A7006B3650 /* AppDelegate.swift in Sources */,
 				F9ED4313235261A7006B3650 /* SceneDelegate.swift in Sources */,
 				F94831CB23527B420004F612 /* TemperatureConverterView.swift in Sources */,
