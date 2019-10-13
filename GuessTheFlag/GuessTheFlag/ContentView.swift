@@ -9,23 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingAlert = false
     var body: some View {
-        VStack {
-            HStack {
-                Text("1")
-                Text("2")
-                Text("3")
-            }
-            HStack {
-                Text("4")
-                Text("5")
-                Text("6")
-            }
-            HStack {
-                Text("7")
-                Text("8")
-                Text("9")
-            }
+        Button("Show Alert") {
+            self.showingAlert = true
+        }.alert(isPresented: $showingAlert) {
+            Alert(title: Text("Hello"), message: Text("Details go here"), dismissButton: .default(Text("OK")))
         }
     }
 }
