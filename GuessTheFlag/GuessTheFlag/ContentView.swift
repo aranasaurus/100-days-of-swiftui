@@ -38,10 +38,10 @@ struct ContentView: View {
             ).edgesIgnoringSafeArea(.all)
 
             VStack(spacing: 30) {
-                Spacer()
                 VStack {
                     Text("Tap the flag of")
                         .foregroundColor(.white)
+                        .fixedSize()
 
                     Text(countries[correctAnswer])
                         .font(.largeTitle)
@@ -50,8 +50,6 @@ struct ContentView: View {
                         .fixedSize()
                 }
 
-                Spacer()
-
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         self.flagTapped(number)
@@ -59,11 +57,10 @@ struct ContentView: View {
                         Image(self.countries[number])
                             .renderingMode(.original)
                             .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+                            .overlay(Capsule().stroke(Color.white, lineWidth: 1))
                             .shadow(color: .black, radius: 2)
                     }
                 }
-                Spacer()
             }
         }
         .alert(isPresented: $showingScore) {
