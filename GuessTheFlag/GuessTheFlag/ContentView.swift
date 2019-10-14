@@ -26,6 +26,7 @@ struct ContentView: View {
 
     @State private var showingScore = false
     @State private var scoreTitle = ""
+    @State private var scoreMessage = ""
     @State private var score = 0
     @State private var questionsAsked = 1
 
@@ -68,10 +69,7 @@ struct ContentView: View {
         .alert(isPresented: $showingScore) {
             Alert(
                 title: Text(scoreTitle),
-                message: Text(gameOver ?
-                    "Your score was \(score)/\(questionsAsked)!" :
-                    "Your score is \(score)"
-                ),
+                message: Text(scoreMessage),
                 dismissButton: .default(Text("\(gameOver ? "Restart" : "Continue")")) {
                     self.askQuestion()
                 })
@@ -82,12 +80,17 @@ struct ContentView: View {
         if index == correctAnswer {
             score += 1
             scoreTitle = "👍"
+            scoreMessage = "Correct!\n"
         } else {
             scoreTitle = "🙅‍♀️"
+            scoreMessage = "Nope, that's \(countries[index]).\n"
         }
 
         if gameOver {
-            scoreTitle = "Good Game!"
+            scoreTitle = "🏁"
+            scoreMessage += "Your score was \(score)/\(questionsAsked)!"
+        } else {
+            scoreMessage += "Your score is \(score)"
         }
 
         showingScore = true
