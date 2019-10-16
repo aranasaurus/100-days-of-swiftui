@@ -57,11 +57,14 @@ struct ContentView: View {
                         Text("+ Tip")
                         Spacer()
                         Text("$\(tipAmount, specifier: "%.2f")")
+                            .foregroundColor(tipPercentage == 0 ? .red : nil)
                     }
                     HStack {
                         Text("Total")
                         Spacer()
                         Text("$\(total, specifier: "%.2f")")
+                            .foregroundColor(tipPercentage == 0 ? .red : nil)
+                            .bold()
                     }
                 }
 
