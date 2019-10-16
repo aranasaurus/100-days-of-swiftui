@@ -13,6 +13,7 @@
 		F940998B2353A39800ECA293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F940998A2353A39800ECA293 /* Assets.xcassets */; };
 		F940998E2353A39800ECA293 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F940998D2353A39800ECA293 /* Preview Assets.xcassets */; };
 		F94099912353A39800ECA293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F940998F2353A39800ECA293 /* LaunchScreen.storyboard */; };
+		F9731CEB235777D100B116B5 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9731CEA235777D100B116B5 /* Flag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F940998D2353A39800ECA293 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F94099902353A39800ECA293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F94099922353A39800ECA293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9731CEA235777D100B116B5 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F94099842353A38C00ECA293 /* AppDelegate.swift */,
 				F94099862353A38C00ECA293 /* SceneDelegate.swift */,
 				F94099882353A38C00ECA293 /* ContentView.swift */,
+				F9731CEA235777D100B116B5 /* Flag.swift */,
 				F940998A2353A39800ECA293 /* Assets.xcassets */,
 				F940998F2353A39800ECA293 /* LaunchScreen.storyboard */,
 				F94099922353A39800ECA293 /* Info.plist */,
@@ -149,6 +152,7 @@
 				F94099852353A38C00ECA293 /* AppDelegate.swift in Sources */,
 				F94099872353A38C00ECA293 /* SceneDelegate.swift in Sources */,
 				F94099892353A38C00ECA293 /* ContentView.swift in Sources */,
+				F9731CEB235777D100B116B5 /* Flag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +293,7 @@
 				DEVELOPMENT_TEAM = JCYYKWU6KX;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GuessTheFlag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +314,7 @@
 				DEVELOPMENT_TEAM = JCYYKWU6KX;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GuessTheFlag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
