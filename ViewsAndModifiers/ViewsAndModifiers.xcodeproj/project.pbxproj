@@ -13,6 +13,7 @@
 		F9731CDB2356DF9700B116B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9731CDA2356DF9700B116B5 /* Assets.xcassets */; };
 		F9731CDE2356DF9700B116B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9731CDD2356DF9700B116B5 /* Preview Assets.xcassets */; };
 		F9731CE12356DF9700B116B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9731CDF2356DF9700B116B5 /* LaunchScreen.storyboard */; };
+		F9731CE92357708900B116B5 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9731CE82357708900B116B5 /* GridStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F9731CDD2356DF9700B116B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F9731CE02356DF9700B116B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9731CE22356DF9700B116B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9731CE82357708900B116B5 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F9731CD42356DF9400B116B5 /* AppDelegate.swift */,
 				F9731CD62356DF9400B116B5 /* SceneDelegate.swift */,
 				F9731CD82356DF9400B116B5 /* ContentView.swift */,
+				F9731CE82357708900B116B5 /* GridStack.swift */,
 				F9731CDA2356DF9700B116B5 /* Assets.xcassets */,
 				F9731CDF2356DF9700B116B5 /* LaunchScreen.storyboard */,
 				F9731CE22356DF9700B116B5 /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				F9731CD52356DF9400B116B5 /* AppDelegate.swift in Sources */,
 				F9731CD72356DF9400B116B5 /* SceneDelegate.swift in Sources */,
+				F9731CE92357708900B116B5 /* GridStack.swift in Sources */,
 				F9731CD92356DF9400B116B5 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
