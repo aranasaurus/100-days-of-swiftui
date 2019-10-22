@@ -24,6 +24,7 @@
 		F9C57478235D7A78001D4342 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F9C5747B235D7A78001D4342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9C5747D235D7A78001D4342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9FC6ED2235EB109009057F7 /* BetterRest.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BetterRest.mlproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		F9C57463235D7A76001D4342 = {
 			isa = PBXGroup;
 			children = (
+				F9FC6ED2235EB109009057F7 /* BetterRest.mlproj */,
 				F9C5746E235D7A76001D4342 /* Better Rest */,
 				F9C5746D235D7A76001D4342 /* Products */,
 			);
