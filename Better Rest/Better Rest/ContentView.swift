@@ -32,17 +32,13 @@ struct ContentView: View {
                     .labelsHidden()
                     .datePickerStyle(WheelDatePickerStyle())
 
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("Desired amount of sleep")
-                        .font(.headline)
+                Section(header: Text("Desired amount of sleep")) {
                     Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
                         Text("\(sleepAmount, specifier: "%g") hours")
                     }
                 }
 
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("Daily coffee intake")
-                        .font(.headline)
+                Section(header: Text("Daily coffee intake")) {
                     Stepper(value: $coffeeAmount, in: 0...20, step: 1) {
                         if coffeeAmount == 1 {
                             Text("1 cup")
@@ -51,20 +47,22 @@ struct ContentView: View {
                         }
                     }
                 }
-            }
-            .navigationBarTitle("BetterRest")
-            .navigationBarItems(trailing:
-                Button(action: calculateBedtime) {
-                    Text("Calculate")
+
+                Section(header: Text("Suggested Bedtime")) {
+                    HStack {
+                        Spacer()
+                        Text(calculateBedtime())
+                            .font(.largeTitle)
+                        Spacer()
+                    }
                 }
-            )
-            .alert(isPresented: $alertShowing) {
-                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
+
+            .navigationBarTitle("BetterRest")
         }
     }
 
-    private func calculateBedtime() {
+    private func calculateBedtime() -> String {
         let model = SleepCalculator()
 
         let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUp)
@@ -78,13 +76,10 @@ struct ContentView: View {
             let formatter = DateFormatter()
             formatter.timeStyle = .short
 
-            alertMessage = formatter.string(from: sleepTime)
-            alertTitle = "Your ideal bedtime is…"
+            return formatter.string(from: sleepTime)
         } catch {
-            alertTitle = "Error"
-            alertMessage = "Sorry, there was a problem calculating sleep time."
+            return "Sorry, there was a problem calculating sleep time."
         }
-        alertShowing = true
     }
 }
 
