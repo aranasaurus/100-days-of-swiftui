@@ -13,6 +13,7 @@
 		F9C57476235D7A78001D4342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C57475235D7A78001D4342 /* Assets.xcassets */; };
 		F9C57479235D7A78001D4342 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C57478235D7A78001D4342 /* Preview Assets.xcassets */; };
 		F9C5747C235D7A78001D4342 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C5747A235D7A78001D4342 /* LaunchScreen.storyboard */; };
+		F9FC6ED4235EB8E2009057F7 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F9FC6ED3235EB8E2009057F7 /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		F9C5747B235D7A78001D4342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9C5747D235D7A78001D4342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9FC6ED2235EB109009057F7 /* BetterRest.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BetterRest.mlproj; sourceTree = "<group>"; };
+		F9FC6ED3235EB8E2009057F7 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SleepCalculator.mlmodel; path = BetterRest.mlproj/Models/SleepCalculator.mlmodel; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				F9C57475235D7A78001D4342 /* Assets.xcassets */,
 				F9C5747A235D7A78001D4342 /* LaunchScreen.storyboard */,
 				F9C5747D235D7A78001D4342 /* Info.plist */,
+				F9FC6ED3235EB8E2009057F7 /* SleepCalculator.mlmodel */,
 				F9C57477235D7A78001D4342 /* Preview Content */,
 			);
 			path = "Better Rest";
@@ -150,6 +153,7 @@
 			files = (
 				F9C57470235D7A76001D4342 /* AppDelegate.swift in Sources */,
 				F9C57472235D7A76001D4342 /* SceneDelegate.swift in Sources */,
+				F9FC6ED4235EB8E2009057F7 /* SleepCalculator.mlmodel in Sources */,
 				F9C57474235D7A76001D4342 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
