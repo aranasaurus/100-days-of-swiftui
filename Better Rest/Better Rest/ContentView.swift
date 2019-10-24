@@ -39,32 +39,30 @@ struct ContentView: View {
                 }
 
                 Section(header: Text("Daily coffee intake")) {
-                    Picker(selection: $coffeeAmount, label: Text("Daily coffee intake")) {
-                        ForEach(0 ..< 21) { cups in
-                            if cups == 1 {
-                                Text("1 cup")
-                            } else {
-                                Text("\(cups) cups")
-                            }
+                    Stepper(value: $coffeeAmount, in: 0...20, step: 1) {
+                        if coffeeAmount == 1 {
+                            Text("1 cup")
+                        } else {
+                            Text("\(coffeeAmount) cups")
                         }
                     }
-                    .pickerStyle(WheelPickerStyle())
-                    .labelsHidden()
+                }
+
+                Section(header: Text("Suggested Bedtime")) {
+                    HStack {
+                        Spacer()
+                        Text(calculateBedtime())
+                            .font(.largeTitle)
+                        Spacer()
+                    }
                 }
             }
+
             .navigationBarTitle("BetterRest")
-            .navigationBarItems(trailing:
-                Button(action: calculateBedtime) {
-                    Text("Calculate")
-                }
-            )
-            .alert(isPresented: $alertShowing) {
-                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-            }
         }
     }
 
-    private func calculateBedtime() {
+    private func calculateBedtime() -> String {
         let model = SleepCalculator()
 
         let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUp)
@@ -78,13 +76,10 @@ struct ContentView: View {
             let formatter = DateFormatter()
             formatter.timeStyle = .short
 
-            alertMessage = formatter.string(from: sleepTime)
-            alertTitle = "Your ideal bedtime is…"
+            return formatter.string(from: sleepTime)
         } catch {
-            alertTitle = "Error"
-            alertMessage = "Sorry, there was a problem calculating sleep time."
+            return "Sorry, there was a problem calculating sleep time."
         }
-        alertShowing = true
     }
 }
 
