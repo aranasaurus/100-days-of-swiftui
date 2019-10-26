@@ -2,21 +2,24 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Better Rest/Better Rest.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:RPS/RPS.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:ViewsAndModifiers/ViewsAndModifiers.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:GuessTheFlag/GuessTheFlag.xcodeproj">
+      location = "container:WeSplit/WeSplit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Converter/Converter.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:WeSplit/WeSplit.xcodeproj">
+      location = "group:GuessTheFlag/GuessTheFlag.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ViewsAndModifiers/ViewsAndModifiers.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RPS/RPS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Better Rest/Better Rest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WordScramble/WordScramble.xcodeproj">
    </FileRef>
 </Workspace>
