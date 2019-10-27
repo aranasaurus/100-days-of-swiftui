@@ -11,26 +11,27 @@ import SwiftUI
 struct ContentView: View {
     @State private var animationAmount1: CGFloat = 1
     @State private var animationAmount2: CGFloat = 1
+    @State private var animationAmount3: Double = 0
 
     var body: some View {
-        print(animationAmount2)
-
-        return VStack {
+        VStack {
             VStack {
                 Spacer()
-                Button("Tap Me") {
-                }.padding(50)
-                    .background(Color.red)
-                    .foregroundColor(.white)
-                    .clipShape(Circle())
-                    .overlay(
-                        Circle()
-                            .stroke(Color.red)
-                            .scaleEffect(animationAmount1)
-                            .opacity(Double(2 - animationAmount1))
-                            .animation(
-                                Animation.easeOut(duration: 1)
-                                    .repeatForever(autoreverses: false)
+                Button("👋") {
+                }
+                .font(.largeTitle)
+                .padding(50)
+                .background(Color.red)
+                .foregroundColor(.white)
+                .clipShape(Circle())
+                .overlay(
+                    Circle()
+                        .stroke(Color.red)
+                        .scaleEffect(animationAmount1)
+                        .opacity(Double(2 - animationAmount1))
+                        .animation(
+                            Animation.easeOut(duration: 1)
+                                .repeatForever(autoreverses: false)
                         )
                 )
                 Spacer()
@@ -55,6 +56,23 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .clipShape(Circle())
                 .scaleEffect(animationAmount2)
+
+                Spacer()
+            }
+            Divider()
+            VStack {
+                Spacer()
+
+                Button("Tap Me") {
+                    withAnimation(.interpolatingSpring(stiffness: 100, damping: 10)) {
+                        self.animationAmount3 += 360
+                    }
+                }
+                .padding(50)
+                .background(Color.red)
+                .foregroundColor(.white)
+                .clipShape(Circle())
+                .rotation3DEffect(.degrees(animationAmount3), axis: (x: 0, y: 1, z: 0))
 
                 Spacer()
             }
