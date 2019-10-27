@@ -22,4 +22,7 @@
    <FileRef
       location = "group:WordScramble/WordScramble.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Animations/Animations.xcodeproj">
+   </FileRef>
 </Workspace>
