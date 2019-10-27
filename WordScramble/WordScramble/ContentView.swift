@@ -41,8 +41,13 @@ struct ContentView: View {
     private func addNewWord() {
         let word = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
 
-        guard word.count > 0 else {
-            wordError(title: "Invalid Word", message: "No text detected.")
+        guard isLongEnough(word) else {
+            wordError(title: "Invalid Word Length", message: "Words need to be at least 3 characters.")
+            return
+        }
+
+        guard word != rootWord else {
+            wordError(title: "Try Harder", message: "You can't just type the word in here.")
             return
         }
 
@@ -98,11 +103,11 @@ struct ContentView: View {
         return true
     }
 
-    private func isReal(_ word: String) -> Bool {
-        guard word.count > 1 else {
-            return word == "a" || word == "i" || word == "o"
-        }
+    private func isLongEnough(_ word: String) -> Bool {
+        return word.count > 2
+    }
 
+    private func isReal(_ word: String) -> Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(
