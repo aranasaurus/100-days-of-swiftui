@@ -34,6 +34,7 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(rootWord)
+            .navigationBarItems(leading: Button(action: startGame, label: { Text("Reset") }))
             .onAppear(perform: startGame)
         }
     }
@@ -82,6 +83,8 @@ struct ContentView: View {
             fatalError("Failed to load a rootWord from the file.")
         }
 
+        newWord = ""
+        usedWords = []
         self.rootWord = rootWord
     }
 
