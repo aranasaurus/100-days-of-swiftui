@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
 
+    @State private var score = 0
+
     var body: some View {
         NavigationView {
             VStack {
@@ -32,8 +34,32 @@ struct ContentView: View {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
                 }
+                HStack {
+                    HStack(alignment: .lastTextBaseline) {
+                        Text("Score:")
+                            .font(.body)
+                        Text("\(score)")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }.padding(
+                        EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
+                    )
+
+                    Spacer()
+
+                    HStack(alignment: .lastTextBaseline) {
+                        Text("Words:")
+                            .font(.body)
+                        Text("\(usedWords.count)")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }.padding(
+                        EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16)
+                    )
+                }
             }
             .navigationBarTitle(rootWord)
+            .navigationBarItems(leading: Button(action: startGame, label: { Text("Reset") }))
             .onAppear(perform: startGame)
         }
     }
@@ -41,8 +67,13 @@ struct ContentView: View {
     private func addNewWord() {
         let word = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
 
-        guard word.count > 0 else {
-            wordError(title: "Invalid Word", message: "No text detected.")
+        guard isLongEnough(word) else {
+            wordError(title: "Invalid Word Length", message: "Words need to be at least 3 characters.")
+            return
+        }
+
+        guard word != rootWord else {
+            wordError(title: "Try Harder", message: "You can't just type the word in here.")
             return
         }
 
@@ -62,6 +93,7 @@ struct ContentView: View {
         }
 
         usedWords.insert(word, at: 0)
+        score += word.count
         newWord = ""
     }
 
@@ -77,6 +109,9 @@ struct ContentView: View {
             fatalError("Failed to load a rootWord from the file.")
         }
 
+        newWord = ""
+        usedWords = []
+        score = 0
         self.rootWord = rootWord
     }
 
@@ -98,11 +133,11 @@ struct ContentView: View {
         return true
     }
 
-    private func isReal(_ word: String) -> Bool {
-        guard word.count > 1 else {
-            return word == "a" || word == "i" || word == "o"
-        }
+    private func isLongEnough(_ word: String) -> Bool {
+        return word.count > 2
+    }
 
+    private func isReal(_ word: String) -> Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(
