@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
 
+    @State private var score = 0
+
     var body: some View {
         NavigationView {
             VStack {
@@ -31,6 +33,29 @@ struct ContentView: View {
                 List(usedWords, id: \.self) {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
+                }
+                HStack {
+                    HStack(alignment: .lastTextBaseline) {
+                        Text("Score:")
+                            .font(.body)
+                        Text("\(score)")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }.padding(
+                        EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
+                    )
+
+                    Spacer()
+
+                    HStack(alignment: .lastTextBaseline) {
+                        Text("Words:")
+                            .font(.body)
+                        Text("\(usedWords.count)")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }.padding(
+                        EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 16)
+                    )
                 }
             }
             .navigationBarTitle(rootWord)
@@ -68,6 +93,7 @@ struct ContentView: View {
         }
 
         usedWords.insert(word, at: 0)
+        score += word.count
         newWord = ""
     }
 
@@ -85,6 +111,7 @@ struct ContentView: View {
 
         newWord = ""
         usedWords = []
+        score = 0
         self.rootWord = rootWord
     }
 
