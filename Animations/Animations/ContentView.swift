@@ -9,27 +9,57 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var animationAmount: CGFloat = 1
+    @State private var animationAmount1: CGFloat = 1
+    @State private var animationAmount2: CGFloat = 1
 
     var body: some View {
-        Button("Tap Me") {
-        }
-        .padding(50)
-        .background(Color.red)
-        .foregroundColor(.white)
-        .clipShape(Circle())
-        .overlay(
-            Circle()
-                .stroke(Color.red)
-                .scaleEffect(animationAmount)
-                .opacity(Double(2 - animationAmount))
-                .animation(
-                    Animation.easeOut(duration: 1)
-                        .repeatForever(autoreverses: false)
+        print(animationAmount2)
+
+        return VStack {
+            VStack {
+                Spacer()
+                Button("Tap Me") {
+                }.padding(50)
+                    .background(Color.red)
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+                    .overlay(
+                        Circle()
+                            .stroke(Color.red)
+                            .scaleEffect(animationAmount1)
+                            .opacity(Double(2 - animationAmount1))
+                            .animation(
+                                Animation.easeOut(duration: 1)
+                                    .repeatForever(autoreverses: false)
+                        )
                 )
-        )
-        .onAppear {
-            self.animationAmount = 2
+                Spacer()
+            }
+            Divider()
+            VStack {
+                Spacer()
+                
+                Stepper("Scale amount", value: $animationAmount2.animation(
+                    Animation.easeInOut(duration: 0.3)
+                        .repeatCount(3, autoreverses: true)
+                ), in: 1...10)
+                    .padding()
+                
+                Spacer()
+                
+                Button("Reset") {
+                    self.animationAmount2 = 1
+                }
+                .padding(40)
+                .background(Color.red)
+                .foregroundColor(.white)
+                .clipShape(Circle())
+                .scaleEffect(animationAmount2)
+
+                Spacer()
+            }
+        }.onAppear {
+            self.animationAmount1 = 2
         }
     }
 }
