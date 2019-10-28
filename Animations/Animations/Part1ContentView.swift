@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Part1ContentView.swift
 //  Animations
 //
 //  Created by Ryan Arana on 10/27/19.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Part1ContentView: View {
     @State private var animationAmount1: CGFloat = 1
     @State private var animationAmount2: CGFloat = 1
     @State private var animationAmount3: Double = 0
@@ -82,8 +82,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Part1ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Part1ContentView()
     }
 }
