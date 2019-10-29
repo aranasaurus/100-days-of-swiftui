@@ -14,6 +14,7 @@
 		F928A99F23660B530060C6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F928A99E23660B530060C6A9 /* Assets.xcassets */; };
 		F928A9A223660B530060C6A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F928A9A123660B530060C6A9 /* Preview Assets.xcassets */; };
 		F928A9A523660B530060C6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F928A9A323660B530060C6A9 /* LaunchScreen.storyboard */; };
+		F9777AAE236891970006E641 /* Part3ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9777AAD236891970006E641 /* Part3ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F928A9A123660B530060C6A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F928A9A423660B530060C6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F928A9A623660B530060C6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9777AAD236891970006E641 /* Part3ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				F928A99A23660B480060C6A9 /* SceneDelegate.swift */,
 				F928A99C23660B480060C6A9 /* Part1ContentView.swift */,
 				F91DF20E2366B5DA0040B262 /* Part2ContentView.swift */,
+				F9777AAD236891970006E641 /* Part3ContentView.swift */,
 				F928A99E23660B530060C6A9 /* Assets.xcassets */,
 				F928A9A323660B530060C6A9 /* LaunchScreen.storyboard */,
 				F928A9A623660B530060C6A9 /* Info.plist */,
@@ -153,6 +156,7 @@
 				F928A99923660B480060C6A9 /* AppDelegate.swift in Sources */,
 				F928A99B23660B480060C6A9 /* SceneDelegate.swift in Sources */,
 				F928A99D23660B480060C6A9 /* Part1ContentView.swift in Sources */,
+				F9777AAE236891970006E641 /* Part3ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
