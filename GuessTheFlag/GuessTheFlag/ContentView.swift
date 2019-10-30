@@ -32,6 +32,7 @@ struct ContentView: View {
 
     @State private var rotations: [Double] = [0, 0, 0]
     @State private var opacities: [Double] = [1, 1, 1]
+    @State private var wrongs: [CGFloat] = [0, 0, 0]
 
     var body: some View {
         ZStack {
@@ -61,6 +62,7 @@ struct ContentView: View {
                     }
                     .rotation3DEffect(.degrees(self.rotations[number]), axis: (x: 0, y: 1, z: 0))
                     .opacity(self.opacities[number])
+                    .modifier(Shake(animatableData: self.wrongs[number]))
                 }
             }
         }
@@ -86,13 +88,16 @@ struct ContentView: View {
         }
 
         if index == correctAnswer {
-            score += 1
             withAnimation(.default) {
                 rotations[index] += 360
             }
+            score += 1
             scoreTitle = "👍"
             scoreMessage = "Correct!\n"
         } else {
+            withAnimation(.default) {
+                wrongs[index] += 1
+            }
             scoreTitle = "🙅‍♀️"
             scoreMessage = "Nope, that's \(countries[index]).\n"
         }
@@ -130,5 +135,18 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+/// Lifted from https://www.objc.io/blog/2019/10/01/swiftui-shake-animation/
+struct Shake: GeometryEffect {
+    var amount: CGFloat = 10
+    var shakesPerUnit = 3
+    var animatableData: CGFloat
+
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        ProjectionTransform(CGAffineTransform(translationX:
+            amount * sin(animatableData * .pi * CGFloat(shakesPerUnit)),
+            y: 0))
     }
 }
