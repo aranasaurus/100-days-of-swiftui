@@ -9,8 +9,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showingSettings = true
+    @State var start = 1
+    @State var end = 12
+    @State var quantity = QuestionQuantity.all
+
+    @ViewBuilder
     var body: some View {
-        Text("Hello, World!")
+        if showingSettings {
+            NewGameSettings(start: $start, end: $end, quantity: $quantity, submit: { self.showingSettings = false })
+        } else {
+            Text(verbatim: "I'm a game")
+        }
     }
 }
 

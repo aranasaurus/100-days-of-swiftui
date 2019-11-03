@@ -13,6 +13,7 @@
 		F98A43AA236E75F400A6C1FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98A43A9236E75F400A6C1FB /* Assets.xcassets */; };
 		F98A43AD236E75F400A6C1FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98A43AC236E75F400A6C1FB /* Preview Assets.xcassets */; };
 		F98A43B0236E75F400A6C1FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98A43AE236E75F400A6C1FB /* LaunchScreen.storyboard */; };
+		F98A43B8236E76E100A6C1FB /* NewGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98A43B7236E76E100A6C1FB /* NewGameSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F98A43AC236E75F400A6C1FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F98A43AF236E75F400A6C1FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F98A43B1236E75F400A6C1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F98A43B7236E76E100A6C1FB /* NewGameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F98A43A3236E75F300A6C1FB /* AppDelegate.swift */,
 				F98A43A5236E75F300A6C1FB /* SceneDelegate.swift */,
 				F98A43A7236E75F300A6C1FB /* ContentView.swift */,
+				F98A43B7236E76E100A6C1FB /* NewGameSettings.swift */,
 				F98A43A9236E75F400A6C1FB /* Assets.xcassets */,
 				F98A43AE236E75F400A6C1FB /* LaunchScreen.storyboard */,
 				F98A43B1236E75F400A6C1FB /* Info.plist */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98A43B8236E76E100A6C1FB /* NewGameSettings.swift in Sources */,
 				F98A43A4236E75F300A6C1FB /* AppDelegate.swift in Sources */,
 				F98A43A6236E75F300A6C1FB /* SceneDelegate.swift in Sources */,
 				F98A43A8236E75F300A6C1FB /* ContentView.swift in Sources */,
