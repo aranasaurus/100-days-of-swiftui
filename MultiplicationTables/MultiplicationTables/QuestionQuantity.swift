@@ -22,4 +22,29 @@ enum QuestionQuantity: CaseIterable, CustomStringConvertible {
         case .all: return "All"
         }
     }
+
+    func questions(max: Int) -> [Question] {
+        var possibleQuestions = [Question]()
+        for a in 1...max {
+            for b in 1...max {
+                possibleQuestions.append(Question(number1: a, number2: b))
+            }
+        }
+        var questions = possibleQuestions.shuffled()
+
+        let count: Int
+        switch self {
+        case .five: count = 5
+        case .ten: count = 10
+        case .twenty: count = 20
+        case .all: count = questions.count
+        }
+
+        if count > possibleQuestions.count {
+            for _ in 0..<(count - possibleQuestions.count) {
+                questions.append(possibleQuestions.randomElement()!)
+            }
+        }
+        return Array(questions.prefix(count))
+    }
 }

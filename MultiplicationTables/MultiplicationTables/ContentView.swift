@@ -10,16 +10,21 @@ import SwiftUI
 
 struct ContentView: View {
     @State var showingSettings = true
-    @State var start = 1
-    @State var end = 12
+    @State var max = 12
     @State var quantity = QuestionQuantity.all
+    @State var previousScore: Int?
 
     @ViewBuilder
     var body: some View {
         if showingSettings {
-            NewGameSettings(start: $start, end: $end, quantity: $quantity, submit: { self.showingSettings = false })
+            NewGameSettings(max: $max, quantity: $quantity, previousScore: $previousScore) {
+                self.showingSettings = false
+            }
         } else {
-            Text(verbatim: "I'm a game")
+            Game(questionQuantity: quantity, max: max) { score in
+                self.previousScore = score
+                self.showingSettings = true
+            }
         }
     }
 }
