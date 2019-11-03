@@ -8,22 +8,6 @@
 
 import SwiftUI
 
-enum QuestionQuantity: CaseIterable, CustomStringConvertible {
-    case five
-    case ten
-    case twenty
-    case all
-
-    var description: String {
-        switch self {
-        case .five: return "5"
-        case .ten: return "10"
-        case .twenty: return "20"
-        case .all: return "All"
-        }
-    }
-}
-
 struct NewGameSettings: View {
     @Binding var start: Int
     @Binding var end: Int
