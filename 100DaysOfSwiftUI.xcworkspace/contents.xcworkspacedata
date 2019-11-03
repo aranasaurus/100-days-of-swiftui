@@ -25,4 +25,7 @@
    <FileRef
       location = "group:Animations/Animations.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:MultiplicationTables/MultiplicationTables.xcodeproj">
+   </FileRef>
 </Workspace>
